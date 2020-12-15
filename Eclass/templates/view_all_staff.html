@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color:#39311d;">Staff List</h1>
+<hr>
+<div>
+    {% if user %}
+    {% for e in user %}
+    <img src="{{e.profile_pic.url}}"><br>
+    <label>Name : {{e.name}}</label><br>
+    <label>Username : {{e.username}}</label><br>
+    <a href="staff_update/{{e.staff_id}}" class="btn btn-warning" id ='{{e.staff_id}}'>edit</a>
+    <a href="delete/{{e.staff_id}}" class="btn btn-danger">delete</a>
+    <hr>
+    {%endfor%}
+    {%endif%}
+</div>
+{% endblock %}

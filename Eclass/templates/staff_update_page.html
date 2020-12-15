@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>staff update</title>
+</head>
+<body>
+	<h1>staff {{staff.name}}</h1>
+
+	<form method="post" action="staff_update_submit" enctype="multipart/form-data">
+		{% csrf_token %}
+        id :<input type="text" name="staff_id" id="staff_id" value="{{staff.staff_id}}" readonly > <br>
+		name :<input type="text" name="name" id="name" value="{{staff.name}}" > <br>
+        status:<input type="text" name="status" id="status" value="{{staff.status}}" > <br>
+          mobile no : <input type="text" name="mobile_no" id="mobile_no" value="{{staff.mobile_no}}"><br>
+          skills : <input type="text" name="skills" id="skills" value="{{staff.skills}}"><br>
+          wage : <input type="text" name="wage" id="wage" value="{{staff.wage}}"><br>
+          username : <input type="text" name="username" id="username" value="{{staff.username}}"><br>
+          password1 : <input type="password" name="password1" id="password1" value="{{staff.password1}}"><br>
+        password2 : <input type="password" name="password2" id="password2" value="{{staff.password2}}"><br>
+        profile pic :<input type="file" name="image" value="{{staff.profile_pic.url}}">
+        <input type="submit" name="reg" id="reg" value="update"> <br>
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

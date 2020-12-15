@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center" style="color:#39311d;">CONTACT</h1>
+<div class="container">
+    <form class="was-validated" method="post" action="home">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="your_name">Your Name</label>
+            <input type="text" class="form-control" id="your_name" name="contact_name" placeholder="Name" required>
+
+            <label for="exampleInputEmail1">Your Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="contact_email" placeholder="Email" aria-describedby="emailHelp" required>
+
+            <label for="subject">Subject</label>
+            <textarea class="form-control" id="subject" name="contact_subject" placeholder="Subject" rows="5" required></textarea>
+            <div style="text-align:center">
+                <input type="submit" class="btn btn-dark btn-lg mt-1 ml-4 contact_submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

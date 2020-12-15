@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center" style="color:#39311d;">STAFF REGISTRATION</h1>
+
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col-12 col-md-3 col-sm-6">
+            <form class=" was-validated" method="post" action="staff_reg" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleName">Name</label>
+                    <input type="text" class="form-control" id="exampleName" placeholder="Name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleUsername">Username</label>
+                    <input type="text" class="form-control" id="exampleUsername" placeholder="Username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password1" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-type Password" name="password2" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="abc@abc.com" name="email" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputSkills">Skills</label>
+                    <input type="text" class="form-control" id="exampleInputSkills" placeholder="Eg : Patience" name="skills" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputWage">Wage</label>
+                    <input type="text" class="form-control" id="exampleInputWage" placeholder="Eg : 1" name="wage" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputMobile">Mobile</label>
+                    <input type="text" class="form-control" id="exampleInputMobile" placeholder="Mobile Number" name="mobile_no" required>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label>Gender</label>
+                </div>
+                <br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                    <label class="form-check-label" for="male">Male</label><br>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="other" value="Other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="exampleInputdob">Date Of Birth</label>
+                    <input type="date" class="form-control" id="exampleInputdob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Profile Picture</label>
+                    <input type="file" id="exampleInputFile" name="image" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+        </section>
+    </section>
+</section>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>eLearn</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!--External CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_css.css' %}">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/75d34b490b.js" crossorigin="anonymous"></script>
+    <style>
+        .container-fluid{
+            padding: 1% 15% 1%;
+        }
+        .navbar{
+            padding-bottom:3.2rem;
+        }
+        #footer{
+            padding:1% 15%;
+        }
+        .wrapper{
+            margin-bottom:185px;
+            margin-top:185px;
+        }
+        .contact_submit{
+            margin: 5% 3% 5% 0;
+            padding: 2% 5%;
+            font-family: "Montserrat";
+            text-align:center;
+        }
+        .admin_button{
+            display:inline;
+        }
+        .admin_div{
+            margin-top:5%;
+        }
+
+    </style>
+</head>
+
+<body>
+<section id="title">
+    <div class="container-fluid">
+
+
+        <!--Navbar-->
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="home">eLearn</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="student_register_page_fn">Register</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="login_student">Login As Student</a>
+                            <a class="dropdown-item" href="login_staff">Login As Staff</a>
+                            <a class="dropdown-item" href="login_admin">Login As Admin</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<!--Codes-->
+<div class="wrapper">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+
+
+
+
+
+<!-- Footer -->
+
+<footer id="footer">
+    <i class="social-icon fab fa-twitter"></i>
+    <i class="social-icon fab fa-facebook-f"></i>
+    <i class="social-icon fab fa-instagram"></i>
+    <i class="social-icon fas fa-envelope-square"></i>
+
+    <p>© Copyright 2020 eLearn</p>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+
+</html>

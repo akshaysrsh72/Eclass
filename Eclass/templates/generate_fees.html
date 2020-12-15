@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<section class="container-fluid">
+    <h1 style="color:#39311d;" align="center">Generate Fees</h1>
+    <section class="row justify-content-center">
+        <section class="col-12 col-md-3 col-sm-6">
+            <form class="was-validated" method="post" action="generate_fees_save">
+                {% csrf_token %}
+                <div class="form-group">
+                    <select class="custom-select" name="student_id" required>
+                        <option value="">Select Student</option>
+                        {% if user %}
+                        {% for e in user %}-->
+                        <option value="{{e.student_id}}">{{e.name}}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                    <div class="invalid-feedback">Please choose a student</div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleExtraFees">Extra Fees</label>
+                    <input type="text" class="form-control" id="exampleExtraFees" placeholder="0" name="extra_fee">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFeeDetails">Fee Details</label>
+                    <input type="text" class="form-control" id="exampleFeeDetails" placeholder="Fee Details" name="fee_details">
+                </div>
+                <div class="form-group">
+                    <select class="custom-select" name="payment" required>
+                        <option value="">Select Payment Detail</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Generate</button>
+            </form>
+        </section>
+    </section>
+</section>
+<div>
+    {% for message in messages %}
+         {{message}}
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update course</title>
+</head>
+<body>
+<form action="update_course_submit_fn" method="post">
+    {% csrf_token %}
+    course_id :<input type="text" name="course_id" id="course_id" value="{{course.course_id}}" readonly > <br>
+    course name: <input type="text" name="course_name" value="{{course.course_name}}"><br>
+    description :<input type="text" name="description" value="{{course.description}}"><br>
+    duration : <input type="text" name="duration" value="{{course.duration}}"><br>
+    thumbnail: <input type="file" name="thumbnail" value="{{course.thumbnail.url}}" ><br>
+    fees : <input type="text" name="fees" value="{{course.fees}}"><br>
+    current staff :<input type="text" name="current_staff" value="{{course.staff_id}}"><br>
+    change staffs :
+    <select name="staffs" id="staffs" >
+         {% if staff %}
+         {% for e in staff %}
+    <option value="{{e.staff_id}}">{{e.name}} id:{{e.staff_id}}</option>
+         {% endfor %}
+         {% endif %}
+    </select>
+    <input type="submit" value="add">
+</form>
+  <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

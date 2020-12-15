@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color:#39311d;">Welcome, {{users.username}}</h1>
+
+<form action="admin_logout_fn">
+    <input type="submit" name="admin_logout" value="logout">
+</form>
+<div class="admin_div">
+    <form action="staffregistration" class="admin_button">
+        <input type="submit" value="add staff">
+    </form>
+
+    <form action="admin_register_page_fn" class="admin_button">
+        <input type="submit" value="add admin">
+    </form>
+
+    <form action="view_all_staff" class="admin_button">
+        <input type="submit" name="view_staff" value="view all staffs">
+    </form>
+    <form action="add_course_fn" class="admin_button">
+        <input type="submit" value="add course">
+    </form>
+    <form action="view_courses" class="admin_button">
+        <input type="submit" value="view course">
+    </form>
+    <form action="view_all_student_fn" class="admin_button">
+        <input type="submit" value="view all student">
+    </form>
+    <form action="generate_fees" class="admin_button">
+        <input type="submit" value="Generate fees reciepts">
+    </form>
+    <form action="generate_salary" class="admin_button">
+        <input type="submit" value="Generate salary slip">
+    </form>
+</div>
+
+
+{% endblock %}

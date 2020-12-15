@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center" style="color:#39311d;">STAFF LOGIN</h1>
+<section class="container-fluid">
+  <section class="row justify-content-center">
+    <section class="col-12 col-md-3 col-sm-6">
+      <form class="form-container" method="post" action="staff_login">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputUsername1">Username</label>
+          <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username" name="staff_username">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="staff_password">
+        </div>
+        <div align="center">
+          <button type="submit" class="btn btn-dark btn-lg contact_submit">Login</button>
+        </div>
+      </form>
+    </section>
+  </section>
+</section>
+{{staff_login_error}}
+{% endblock %}

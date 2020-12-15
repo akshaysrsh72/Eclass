@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="color:#39311d;">Welcome, {{user.name}}</h1>
+
+<div>
+    <img src="{{user.profile_pic.url}}">
+</div>
+
+    <form action="staff_logout" method="post">
+
+    {% csrf_token %}
+    <input type="submit" value="logout">
+
+</form>
+{% endblock %}

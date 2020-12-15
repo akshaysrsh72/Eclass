@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<section class="container-fluid">
+    <h1 style="color:#39311d;" align="center">Generate Salary</h1>
+    <section class="row justify-content-center">
+        <section class="col-12 col-md-3 col-sm-6">
+            <form class="was-validated" method="post" action="generate_salary_save">
+                {% csrf_token %}
+                <div class="form-group">
+                    <select class="custom-select" name="staff_id" required>
+                        <option value="">Select Staff</option>
+                        {% if staff %}
+                        {% for e in staff %}-->
+                        <option value="{{e.staff_id}}">{{e.name}}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                    <div class="invalid-feedback">Please choose a Staff</div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleBonus">Bonus</label>
+                    <input type="text" class="form-control" id="exampleBonus" placeholder="0" name="extra_fee">
+                </div>
+                <div class="form-group">
+                    <label for="exampleTotalHours">Total Hours</label>
+                    <input type="text" class="form-control" id="exampleTotalHours" placeholder="0" name="total_hrs" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleWorkedHours">Worked Hours</label>
+                    <input type="text" class="form-control" id="exampleWorkedHours" placeholder="0" name="worked_hrs" required>
+                </div>
+                <div class="form-group">
+                    <select class="custom-select" name="payment" required>
+                        <option value="">Select Payment Detail</option>
+                        <option value="recived">Received</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Generate</button>
+            </form>
+        </section>
+    </section>
+</section>
+<div>
+    {% for message in messages %}
+         {{message}}
+    {% endfor %}
+</div>
+{% endblock %}
+

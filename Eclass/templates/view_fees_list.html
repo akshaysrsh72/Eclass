@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view fees</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<h1>fees list</h1>
+<div>
+    {% if user %}
+<ol>
+    {% for e in user %}
+    <li>student info</li>
+    <ul>
+        <li><img src="{{e.profile_pic.url}}"></li>
+        <li>name : {{e.name}}</li>
+        <li>username : {{e.username}} </li>
+        <center>
+           <li> <a href="student_update/{{e.student_id}}" class="btn btn-warning" id ='{{e.student_id}}'>edit</a>
+            <a href="student_delete/{{e.student_id}}" class="btn btn-danger">delete</a></li>
+        </center>
+    </ul>
+    {%endfor%}
+</ol>
+{%endif%}
+</div>
+
+
+
+</body>
+</html>

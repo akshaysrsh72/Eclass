@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col-12 col-md-3 col-sm-6">
+            <form class=" was-validated" action="add_course_submit_fn" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleCourseName">Course Name</label>
+                    <input type="text" class="form-control" id="exampleCourseName" placeholder="Course Name" name="course_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleDescription">Description</label>
+                    <input type="text" class="form-control" id="exampleDescription" placeholder="Description" name="description" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleDuration">Duration</label>
+                    <input type="text" class="form-control" id="exampleDuration" placeholder="Duration" name="duration" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFees">Fees</label>
+                    <input type="text" class="form-control" id="exampleFees" placeholder="Fees" name="fees" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Image</label>
+                    <input type="file" class="" id="exampleInputFile" name="thumbnail" required>
+                </div>
+                <div class="form-group">
+                    <select class="custom-select" name="staffs" required>
+                        <option value="">Select Staff</option>
+                        {% if user %}
+                        {% for e in user %}-->
+                        <option value="{{e.staff_id}}">{{e.name}}</option>
+                        {% endfor %}
+                        {% endif %}
+                    </select>
+                    <div class="invalid-feedback">Please choose a staff</div>
+                </div>
+               <button type="submit" class="btn btn-primary btn-block">Add</button>
+            </form>
+        </section>
+    </section>
+</section>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+{% endblock %}
+

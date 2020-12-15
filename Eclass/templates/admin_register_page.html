@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center" style="color:#39311d;">ADMIN REGISTRATION</h1>
+
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col-12 col-md-3 col-sm-6">
+            <form action="admin_reg_fn" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleFirstName">Name</label>
+                    <input type="text" class="form-control" id="exampleFirstName" placeholder="Eg : Kevin" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleUsername">Username</label>
+                    <input type="text" class="form-control" id="exampleUsername" placeholder="Username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="abc@abc.com" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password1" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-type Password" name="password2" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+        </section>
+    </section>
+</section>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+{% endblock %}

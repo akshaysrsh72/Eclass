@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color:#39311d;">Course List</h1>
+<hr>
+<div>
+    {% if course %}
+    {% for e in course %}
+    <img src="{{e.thumbnail.url}}"><br>
+    <label>Course Name : {{e.course_name}}</label><br>
+    <label>Fees : {{e.fees}}</label><br>
+    <label>Duration : {{e.duration}} hrs</label><br>
+    <a href="update_course/{{e.course_id}}" class="btn btn-warning" id ='{{e.course_id}}'>edit</a>
+    <a href="course_delete/{{e.course_id}}" class="btn btn-danger">delete</a>
+    <hr>
+    {%endfor%}
+    {%endif%}
+</div>
+<!--        <li><img src="{{e.thumbnail.url}}"></li>-->
+{% endblock %}
+
+

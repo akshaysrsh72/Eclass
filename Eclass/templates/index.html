@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>eLearn</title>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!--External CSS-->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu&display=swap" rel="stylesheet">
+  <!-- fontawesome -->
+  <script src="https://kit.fontawesome.com/75d34b490b.js" crossorigin="anonymous"></script>
+  <style>
+    .reglog{
+      display:inline;
+    }
+  </style>
+
+</head>
+
+<body>
+  <section id="title">
+    <div class="container-fluid">
+
+      <!--Navbar-->
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="home">eLearn</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="student_register_page_fn">Register</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="login_student">Login As Student</a>
+                <a class="dropdown-item" href="login_staff">Login As Staff</a>
+                <a class="dropdown-item" href="login_admin">Login As Admin</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!--Title-->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>Join us to become the better YOU.</h1>
+          <form action="student_register_page_fn" class="reglog">
+            <button class="btn btn-dark btn-lg download-button" type="submit">Register</button>
+          </form>
+          <form action="login_student" class="reglog">
+            <button class="btn btn-outline-light btn-lg download-button" type="submit">Login</button>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <img class="title-image" src="{% static 'images/computer-coding.jpg' %}" alt="computer-img">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Features -->
+
+  <section id="features">
+
+    <div class="row">
+      <div class="feature-box col-lg-4">
+        <i class="fas fa-check-circle fa-5x icon"></i>
+        <h3>Quality Education.</h3>
+        <p>Your education is out atmost priority.</p>
+      </div>
+
+      <div class="feature-box col-lg-4">
+        <i class="fas fa-handshake fa-5x icon"></i>
+        <h3>Guaranteed.</h3>
+        <p>We make sure all your requirements are met.</p>
+      </div>
+      <div class="feature-box col-lg-4">
+        <i class="fas fa-headset fa-5x icon"></i>
+        <h3>24x7 Support.</h3>
+        <p>If you have queries, our team will help you 24x7.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2>This website changed my life. Kudos to this website and everyone behind it.</h2>
+          <img class="testimonial-image" src="{% static 'images/profile1.jpg' %}" alt="male-profile">
+          <em>Muhsin, UAE</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">I've been a struggling programmer and now its a piece of cake.</h2>
+          <img class="testimonial-image" src="{% static 'images/profile2.jpg' %}" alt="female-profile">
+          <em>Jessica, London</em>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <i class="social-icon fab fa-twitter"></i>
+    <i class="social-icon fab fa-facebook-f"></i>
+    <i class="social-icon fab fa-instagram"></i>
+    <i class="social-icon fas fa-envelope-square"></i>
+
+    <p>© Copyright 2020 eLearn</p>
+
+  </footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+
+</html>
